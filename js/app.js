@@ -10,7 +10,8 @@ var view = function(model){
 	model.forEach(function(todo, index){
 		var newItem = document.createElement('div');
 		newItem.id = index;
-		newItem.innerHTML = todo+"<button>X</button>";
+		newItem.classList.add('normal-todo');
+		newItem.innerHTML = "<p class='todo-text'>"+todo+"</p><button class='todo-button'>X</button>";
 		cont.appendChild(newItem);
 	})
 }
@@ -22,7 +23,7 @@ var controller  = function(storage, view){
 	var addToList = function(event){
 		if (event.keyCode === 13) {
 			var temp = inp.value;
-			model.push(temp);
+			model.unshift(temp);
 			sessionStorage.setItem('model', JSON.stringify(model));	
 			renderView(model);
 			inp.value = "";
