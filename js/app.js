@@ -2,9 +2,9 @@ var inp = document.getElementById('todo-input');
 var cont = document.getElementById('container-for-list');
 var list = cont.childNodes;
 
-var initialModel = ['Sample todo item'];
-sessionStorage.setItem('model', JSON.stringify(initialModel));
+var initialModel = [];
 
+if (!sessionStorage.model) sessionStorage.setItem('model', JSON.stringify(initialModel));
 
 var view = function(model){
 	model.forEach(function(todo, index){
