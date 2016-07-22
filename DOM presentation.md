@@ -1,6 +1,7 @@
 # DOM Enlightenment
-22nd July 20016
+22nd July 2016
 Sankalp Agarwal
+Geekskool
 
 ---
 
@@ -26,15 +27,15 @@ HTML code  = > tree
 </html>
 
 ```
-![tre structure](http://javascript.info/files/tutorial/browser/dom/simpledom2.png)
+![tree structure](http://javascript.info/files/tutorial/browser/dom/simpledom2.png)
 
 ---
 
 # Type of Nodes
-DOCUMENT_NODE   (e.g. window.document)
-ELEMENT_NODE   (e.g. body, a, p, script, style, html, etc)
-TEXT_NODE   (e.g. text characters in an html document)
-DOCUMENT_TYPE_NODE   (e.g. !DOCTYPE html)
+* DOCUMENT_NODE   (e.g. window.document)
+* HTML\*ELEMENT_NODE   (e.g. body, a, p, script, style, html, etc)
+* TEXT_NODE   (e.g. text characters in an html document)
+* DOCUMENT_TYPE_NODE   (e.g. !DOCTYPE html)
 etc
 
 ---
@@ -43,42 +44,50 @@ etc
 
 ### Every DOM node is an instance of a DOM Object (aka interface)
 Therefore, 	they have properties and methods
-Eg. appendChild(), innerHTML
-
+```javascript
+appendChild()
+innerHTML
+```
 ### DOM objects inherit from other DOM objects
-Eg. h1 > HTMLHeadingElement > HTMLElement > Element > Node > EventTarget > Object
+Eg. h1 => HTMLHeadingElement > HTMLElement > Element > Node > EventTarget > Object
 
 ---
 
-# Document
+# Document Object
 window.document is an instance of the Document object
 It is the root of the DOM tree.
-
-
+```javascript
+document.body
+document.title
+```
 ---
 
-# HTML*Elements
+# HTML*Element Object
+
 #### All elements in an HTML document have unique constructors of the type HTML*Element
 Example
-* HTMLButtonElement
-* HTMLAnchorElement
-* HTMLBodyElement
-* HTMLTableElement
+* button => HTMLButtonElement
+* a => HTMLAnchorElement
+* body => HTMLBodyElement
+* table => HTMLTableElement
 
 ---
+
 # HTML*Element > HTMLElement > Element > Node
+```javascript
 createElement()
 tagName
 children
 setAttribute()
 classList()
 attributes
-
+```
 ---
 
-# Text 
+# Text Object 
 #### All text in an HTML document
 #### Including whitespaces
+```javascript
 textContent
 splitText()
 appendData()
@@ -88,7 +97,7 @@ replaceData()
 subStringData()
 normalize()
 data
-
+```
 ---
 
 # Things you can do with the DOM
@@ -96,106 +105,125 @@ data
 ---
 
 # 1. Selecting nodes
+```javascript
 getElementById()
 activeElement
-querySelector() - select with CSS selector syntax
-
+querySelector() // select with CSS selector syntax
+```
 ---
 
 # 2. Traversing the DOM
+```javascript
 parentNode
 firstChild
 lastChild
 nextSibling
 previousSibling
-
+```
 ---
 
 # 3. Creating nodes
+```javascript
 createElement()
 createTextNode()
-
+```
 ---
 
 # 4. Inserting & removing nodes
+```javascript
 appendChild()
 insertBefore()
 cloneNode()
 removeChild()
 replaceChild()
-
+```
 ---
 
 # 5. Modifying content
+```javascript
 innerHTML
 outerHTML
 textContent
 innerText, outerText
 appendData()
 deleteData()
-
+```
 ---
 
 # 6. Working with Node collections
-HTMLCollections, Nodelist
-ChildNodes
-Convert this to array
+Select multiple nodes from a tree 
+Live lists(mostly)
+Not real arrays (have length property)
 
-Eg. querySelectorAll()
+```javascript
+querySelectorAll()
 getElementsByTagName()
 getElementsByClassName()
-children (HTML Collection)
+children
 document.images
-document.all
-
+childNodes
+```
 ---
 
 # 7. Working with attributes
+```javascript
 getAttribute()
 setAttribute()
 removeAttribute()
 hasAttribute()
-arrtibutes - get a list
-Eg. set class, id
+attributes  //get a list of all attributes
+```
+Eg. set id using attributes
 
 ---
 
 # 8. Working with classes
-classList
+```javascript
+____.classList
 classList.add()
 classList.remove()
 classList.toggle()
 classList.contains()
-
+```
 ---
 
-# 9.1 Working with styles
+# 9 Working with styles
 
-### Inline style property - used to get, set
-Eg. element.style
-### getComputedStyle()
-Eg. 
-### CSSStryleSheet object
-Eg. 
+###### Inline style property - used to get, set, remove
+```javascript
+_____.style.backgroundColor = 'red';
+```
+
+###### CSSStyleSheet & CSSStyleRule objects
+```javascript
+document.styleSheets; //list of CSSStyleSheets
+document.styleSheets[0].cssRules //list of CSSStyleRules
+styleSheet.insertRule('p{color:red}', 1);
+```
 
 ---
 
 # 10.  Listening to events
 
-Type of events
+---
+
+
+#  addEventListener()
+```javascript 
+____.addEventListener('click', func, false);
+```
+available on elements, window, document
+removeEventListener()
+
+---
+
+# Type of events
 * Interface events (load, error, resize, scroll...)
 * Focus (focus, blur, focusIn...)
 * Input (change, submit...)
 * Mouse (click, moueDown, mouseEnter...)
 * Keyboard (keyUp, keyDown, keyPress)
 * touch (touchstart, touchmove,...)
-
----
-
-#  addEventListener()
-### element.addEventListener('click', func);
-available on elements, window, document
-removeEventListener()
 
 ---
 
@@ -207,11 +235,10 @@ can be used to get data about the event
 
 # event Propagation
 
-Capture phase & Bubble phase
+### Capture phase & Bubble phase
 
 ![event chain](http://javascript.info/files/tutorial/browser/events/event-order-w3c.gif)
 
 ---
 
-# Event delegation
-Using propagation & the event object
+# That's all folks
