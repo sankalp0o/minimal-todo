@@ -1,10 +1,14 @@
+
 var inp = document.getElementById('todo-input');
 var cont = document.getElementById('container-for-list');
 var list = cont.childNodes;
 
-var initialModel = [];
+//==--------------------------------------------------MODEL-----------------------------------------------------------------------
 
+var initialModel = [];
 if (!sessionStorage.model) sessionStorage.setItem('model', JSON.stringify(initialModel));
+
+//==--------------------------------------------------VIEW------------------------------------------------------------------------
 
 var view = function(model){
 	model.forEach(function(todo, index){
@@ -16,9 +20,10 @@ var view = function(model){
 	})
 }
 
+//==-------------------------------------------------CONTROLLER------------------------------------------------------------------
 
-var controller  = function(storage, view){
-	var model = JSON.parse(storage);
+var controller  = function(storageModel, view){
+	var model = JSON.parse(storageModel);
 
 	var addToList = function(event){
 		if (event.keyCode === 13) {
