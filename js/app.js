@@ -6,7 +6,8 @@ var list = cont.childNodes;
 //==--------------------------------------------------MODEL-----------------------------------------------------------------------
 
 var initialModel = [];
-if (!sessionStorage.model) sessionStorage.setItem('model', JSON.stringify(initialModel));
+if (!sessionStorage.model) sessionStorage.setItem('model', JSON.stringify(initialModel)); //creates new model in storage if one doesn't exist
+var model = JSON.parse(sessionStorage.model);
 
 //==--------------------------------------------------VIEW------------------------------------------------------------------------
 
@@ -22,8 +23,7 @@ var view = function(model){
 
 //==-------------------------------------------------CONTROLLER------------------------------------------------------------------
 
-var controller  = function(storageModel, view){
-	var model = JSON.parse(storageModel);
+var controller  = function(model, view){
 
 	var addToList = function(event){
 		if (event.keyCode === 13) {
@@ -61,4 +61,4 @@ var controller  = function(storageModel, view){
 
 }
 
-controller(sessionStorage.model, view);
+controller(model, view);
