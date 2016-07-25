@@ -10,7 +10,7 @@ Geekskool
 HTML code  = > tree
 
 ---
-
+# 
 ```html
 <html>
 <head>
@@ -210,7 +210,7 @@ styleSheet.insertRule('p{color:red}', 1);
 
 #  addEventListener()
 ```javascript 
-____.addEventListener('click', func, false);
+____.addEventListener('click', handlerFunc, false);
 ```
 available on elements, window, document
 removeEventListener()
