@@ -1,0 +1,63 @@
+h1 {
+	text-align: center;
+}
+
+#instructions {
+	text-align: center;
+	font-size: 16px;
+	margin-top: -15px;
+}
+
+#outer {
+	width: 50%;
+	margin-top: 50px;
+}
+
+div {
+	margin:auto;
+}
+
+input[type="text"]{
+	margin: auto;
+	margin-top: 50px;
+	display: block;
+	width: 400px;
+	height: 30px;
+	padding: 10px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+}
+
+#container-for-list {
+	width: 420px;
+	border: 1px solid #ccc;
+	border-top: none;
+}
+
+.normal-todo {
+	height: 30px;
+	border-bottom: 1px solid #ccc;
+	padding: 10px;
+	padding-left: 20px;
+}
+
+.todo-text {
+	display: inline;
+	vertical-align: -webkit-baseline-middle;
+}
+
+.todo-button {
+	float: right;
+	margin-left: 10px;
+	border: 1px solid white;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    color: #555;
+}
+
+input:focus {
+	outline:none;
+	border:1px solid #ccc;
+}
+
